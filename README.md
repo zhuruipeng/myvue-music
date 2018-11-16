@@ -1,6 +1,8 @@
 vue+vue-router+webpack
 2018年11月17日01:41:07
 仿网易云音乐第0.0.1版本，用时3天，基本可以播放歌曲,存在的问题是模板组件重复，无法复用数据重复,样式不好看
+demo：http://www.findcf.com/vuemusic/ 扫码
+（怎么不能上传图片。。。）
 
 # myvue-music
 
