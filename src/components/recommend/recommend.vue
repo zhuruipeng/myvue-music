@@ -15,39 +15,44 @@
     </div>
     <!--主页推荐歌单下边内容每行显示3个-->
     <div>
-      <ul >
-        <li tag="li"  v-for="item in personlized" :key="item.id">
-          <img :src="item.picUrl" alt="" @click="songsdetail(item.id)">
-          <p> {{item.name}}</p>
-        </li>
-      </ul>
+      <!--mint-ui下拉发送请求没有使用-->
+      <!--<mt-loadmore :auto-fill='false' :bottom-method="loadBottom" ref="loadmore">-->
+      <!--</mt-loadmore>-->
+          <ul>
+          <li tag="li" v-for="item in personlized" :key="item.id">
+            <img :src="item.picUrl" alt="" @click="songsdetail(item.id)">
+            <p> {{item.name}}</p>
+          </li>
+        </ul>
+
     </div>
   </div>
 </template>
 <script>
   import Back from '@/components/back/back'
   import Tab from '@/components/tab/tab'
+
   export default {
-    name: "recommend",
+    name: 'recommend',
     data() {
       return {
         imgs: [],
         personlized: [],
       }
     },
-    components:{
-        Back,
+    components: {
+      Back,
       Tab
     },
-    methods:{
-      songsdetail(id){
+    methods: {
+      songsdetail(id) {
         this.$router.push({
-          name:'songsdetail',
+          name: 'songsdetail',
           params: {
             id: id
           }
         })
-      }
+      },
     },
     //获取轮播图
     created() {
@@ -61,43 +66,45 @@
       this.$axios.get('personalized')
         .then(res => {
           this.personlized = res.data.result;
-          console.log(res);
         })
         .catch(err => {
           console.log('err');
         });
       // 获取歌单详情
-
     }
   }
-
 </script>
 
 <style scoped>
-  .topheader{
+.retopbanner{
+/**/
+}
 
-  }
-  .mint-header{
+  .mint-header {
     background-color: orangered;
   }
-  .header{
-    display:flex;
+
+  .header {
+    display: flex;
     background-color: orangered;
-    width:100%;
+    width: 100%;
   }
-  .headerchoice{
+
+  .headerchoice {
     width: 33.33%;
-    padding-top :10px;
+    padding-top: 10px;
     padding-left: 50px;
     text-decoration: none;
     font-size: 13px;
 
     color: #fff;
   }
-  .router-link-active{
+
+  .router-link-active {
     color: #fff;
     font-weight: 700;
   }
+
   .retopbanner {
     /*width:25rem;*/
   }
@@ -112,24 +119,28 @@
     max-width: 100%;
     max-height: 100%;
   }
-  ul{
+
+  ul {
     padding: 0;
-    margin-top:1px;
+    margin-top: 1px;
     list-style: none;
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
   }
-  ul li{
+
+  ul li {
     margin: 5px;
     width: 30%;
   }
-  li img{
+
+  li img {
     width: auto;
-    height:auto;
+    height: auto;
     max-height: 120px;
     max-width: 120px;
   }
-  ul p{
+
+  ul p {
     margin: 0;
     padding: 0;
     font-size: 12px;

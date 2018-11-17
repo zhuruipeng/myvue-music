@@ -49,7 +49,7 @@
 <style scoped>
   ul{
     position: fixed;
-    bottom: -16px;
+    bottom: 0px;
     width: 100%;
     background: #fff;
     padding: 0px;

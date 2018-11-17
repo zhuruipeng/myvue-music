@@ -1,7 +1,10 @@
 
 <template>
   <!--这是一个公共组件每一个歌曲详情列表上边是图片，下边是歌曲-->
-  <div class="commonstyle" slot="commontopbar">  <h3> 歌单 </h3>
+
+  <div class="commonstyle" slot="commontopbar">
+    <h3> 歌单 </h3>
+    <back></back>
     <div class="topcover">
       <img class="authorimg" :src="songsdetail.coverImgUrl" alt="">
       <div class="topcovername">
@@ -60,14 +63,14 @@
 <style scoped>
   h3 {
     position: relative;
-    top: -10px;
+    top: 05px;
     left: 47px;
     color: #ccc;
     font-size: 18px;
     z-index: 999;
   }
   .commonstyle{
-
+background-color: darkgray;
   }
   .topcover{
     height: 260px;
@@ -100,7 +103,12 @@
     padding: 20px 0;
     margin: 0 5px;
     border-bottom: 1px solid #e4e4e4;
-  }.numsort{
+    font-size: 13px;
+  }
+  .autor{
+    font-size: 10px;
+  }
+  .numsort{
      position: relative;
      top: 10px;
      left:0px;
@@ -111,12 +119,12 @@
   }
   .authorimg{
     position: absolute;
-    top: 0px;
+    top: 30px;
     left: 0px;
     width: 100%;
     height: 100%;
-    max-width:500px ;
-    max-height:320px;
+    max-width:100px ;
+    max-height:100px;
   }
 
 </style>

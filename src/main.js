@@ -12,6 +12,7 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import './icon/iconfont.css'
 import './common/common.css'
+import Back from './components/back/back'
 Vue.use(MintUI)
 import Axios from 'axios'
 Axios.defaults.baseURL = 'http://www.findcf.com:3000/';
@@ -33,6 +34,7 @@ Axios.interceptors.response.use(function (response) {
 
 /* eslint-disable no-new */
 Vue.component('aplayer', APlayer)
+Vue.component('back',Back)
 new Vue({
   el:"#app",
   router,

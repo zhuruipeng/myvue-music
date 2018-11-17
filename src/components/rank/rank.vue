@@ -1,88 +1,71 @@
+<!--suppress ALL -->
 <template>
   <div class="rankcontainer">
     <tab></tab>
     <ul class="rank">
-      <li class="rankli">
+      <li class="rankli" v-for ='item in yunTopList' :key="item.id" @click="selectItem(item)">
         <div class="rankimg">
-          <img :src="playlists.coverImgUrl" alt="">
-          <!--<span class="rankname">{{playlists.name}}</span>-->
+          <img :src="item.coverImgUrl" alt="">
         </div>
         <div class="ranktext">
           <ul class="ranktextitem">
-            <li v-for="(item,index) in tracks " :key="item.id">{{index+1}}{{item.name}}-{{item.ar[0].name}}</li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-    <ul class="rank">
-      <li class="rankli">
-        <div class="rankimg">
-          <img :src="playlists1.coverImgUrl" alt="">
-          <!--<span class="rankname">{{playlists.name}}</span>-->
-        </div>
-        <div class="ranktext">
-          <ul class="ranktextitem">
-            <li v-for="(item,index) in tracks1 " :key="item.id">{{index+1}}{{item.name}}-{{item.ar[0].name}}</li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-    <ul class="rank">
-      <li class="rankli">
-        <div class="rankimg">
-          <img :src="playlists2.coverImgUrl" alt="">
-          <!--<span class="rankname">{{playlists.name}}</span>-->
-        </div>
-        <div class="ranktext">
-          <ul class="ranktextitem">
-            <li v-for="(item,index) in tracks2 " :key="item.id">{{index+1}}{{item.name}}-{{item.ar[0].name}}</li>
+            <li v-for="(item,index) in item.top " :key="item.id">{{index+1}}{{item.name}}-{{item.ar[0].name}}</li>
           </ul>
         </div>
       </li>
     </ul>
   </div>
-
 </template>
 
 <script>
   import Back from '@/components/back/back'
   import Tab from '@/components/tab/tab'
-
+  const music_top = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
   export default {
-    data(){
-      return{
-      playlists:{},
-        tracks:[],
-        playlists1:{},
-        tracks1:[],  playlists2:{},
-        tracks2:[],
-
-    }
+    data() {
+      return {
+        yunTopList: []
+      }
     },
     name: "singer",
     components:{
       back:Back,
       Tab,
     },
-    watch:{
-    },
-    created(){
-this.$axios.all([
-  this.$axios.get('/top/list/?idx=0'),
-  this.$axios.get('/top/list/?idx=1'),
-  this.$axios.get('/top/list/?idx=2'),
-])
-  .then(this.$axios.spread((res1,res2,res3)=>{
-    this.tracks =(res1.data.playlist.tracks.splice(0,3));
-    this.playlists =res1.data.playlist
-    this.tracks1 =(res2.data.playlist.tracks.splice(0,3));
-    this.playlists1 =res2.data.playlist
-    this.tracks2 =(res3.data.playlist.tracks.splice(0,3));
-    this.playlists2 =res3.data.playlist
-  }))
-
-
-
+    methods:{
+      selectItem(item){
+        this.$router.push({
+          path:`/rank/${item.id}`
+        })
+      },
+      _getTopList(){
+        for (let i = 0; i <music_top.length ; i++) {
+          this.$axios.get(`top/list?idx=${music_top[i]}`)
+            .then(res=>{
+              let list = res.data.playlist
+              list.top= res.data.playlist.tracks.splice(0, 3)
+              this.yunTopList.push(list)
+              // console.log(list)
+            })
+        }
+      }
+      },
+    created() {
+      this._getTopList()
+      //自己写的笨方法警示自己不删除
+      // this.$axios.all([
+      //     this.$axios.get('/top/list/?idx=0'),
+      //     this.$axios.get('/top/list/?idx=1'),
+      //     this.$axios.get('/top/list/?idx=2'),
+      //   ])
+      //   .then(this.$axios.spread((res1, res2, res3) => {
+      //     this.tracks = (res1.data.playlist.tracks.splice(0, 3));
+      //     this.playlists = res1.data.playlist
+      //     this.tracks1 = (res2.data.playlist.tracks.splice(0, 3));
+      //     this.playlists1 = res2.data.playlist
+      //     this.tracks2 = (res3.data.playlist.tracks.splice(0, 3));
+      //     this.playlists2 = res3.data.playlist
+      //   }))
     }
   }
 </script>

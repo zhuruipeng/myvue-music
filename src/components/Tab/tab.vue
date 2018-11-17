@@ -1,6 +1,8 @@
 <template>
   <div class="topheader">
-    <mt-header title="vuemusic"></mt-header>
+    <i  class="iconfont searchiconfont">&#xe60a;</i>
+    <i  class="iconfont microphone">&#xe642;</i>
+
     <div class="header">
       <router-link  tag="div" class="headerchoice" to="/recommend" >推荐</router-link>
       <router-link  tag= 'div' class="headerchoice" to="/rank">排行</router-link>
@@ -19,9 +21,7 @@
 
 <style scoped>
   .topheader{
-
-  }
-  .mint-header{
+    height: 60px;
     background-color: orangered;
   }
   .header{
@@ -31,7 +31,7 @@
   }
   .headerchoice{
     width: 33.33%;
-    padding-top :10px;
+    padding-top :35px;
     padding-left: 50px;
     text-decoration: none;
     font-size: 13px;
@@ -49,5 +49,20 @@
   .mint-swipe {
     height: 150px;
   }
-
+.searchiconfont{
+  z-index: 999;
+  position: absolute;
+  top: 8px;
+  left: 128px;
+  color: #fff;
+  font-size: 20px;
+}
+  .microphone{
+    z-index: 999;
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    color: #fff;
+    font-size: 20px;
+  }
 </style>

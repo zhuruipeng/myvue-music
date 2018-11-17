@@ -1,6 +1,7 @@
 <template>
 
 <div class="playbutton">
+  <back></back>
   <div>
     <img :src="songsurl" alt="">
   </div>

@@ -1,5 +1,6 @@
 <template>
   <ul>
+    <back></back>
     <li v-for="item in playlists" :key="item.id">
       <img :src="item.coverImgUrl" alt="">
       <p>{{item.name}}</p>
