@@ -57,7 +57,6 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    border: 0;
     font-size: 100%;
     font-weight: 400;
     vertical-align: baseline;  }
@@ -78,7 +77,6 @@
     color: #2e3030;
     font-size: 14px;
     padding: 0;
-    border: 0;
     font-weight: 400;
     vertical-align: baseline;
   }

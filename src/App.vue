@@ -42,13 +42,6 @@
 </script>
 
 <style>
-#app {
-  position: fixed;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden
-}
 body{
   margin: 0;
   padding:0;
@@ -60,6 +53,6 @@ body{
   top: 8px;
   left: 15px;
   z-index: 999;
-  color: #ccc;
+  color: #fff;
 }
 </style>

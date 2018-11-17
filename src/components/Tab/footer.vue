@@ -31,7 +31,6 @@
   export default {
     data(){
       return{
-        selected:'外卖'
       }
     },
     name: "rank",

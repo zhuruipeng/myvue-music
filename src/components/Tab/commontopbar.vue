@@ -74,6 +74,7 @@
   }
 .topcover{
   height: 260px;
+
 }
   .topcovername{
     position: absolute;
@@ -92,7 +93,6 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    border: 0;
     font-size: 100%;
     font-weight: 400;
     vertical-align: baseline;  }

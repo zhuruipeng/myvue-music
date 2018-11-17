@@ -16,6 +16,21 @@ Vue.use(MintUI)
 import Axios from 'axios'
 Axios.defaults.baseURL = 'http://www.findcf.com:3000/';
 Vue.prototype.$axios = Axios;
+//拦截器请求显示loading
+Axios.interceptors.request.use(function (config) {
+ MintUI.Indicator.open({
+    text: 'emem有点慢...',
+    spinnerType: 'snake'
+  });
+  return config;
+});
+//拦截器相应关闭loading  参考github axios
+Axios.interceptors.response.use(function (response) {
+  MintUI.Indicator.close();
+  return response;
+});
+
+
 /* eslint-disable no-new */
 Vue.component('aplayer', APlayer)
 new Vue({
