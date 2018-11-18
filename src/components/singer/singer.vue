@@ -1,6 +1,7 @@
 <template>
 <div>
   <tab></tab>
+  <back></back>
   <slot name="back"></slot>
 <ul class="artists">
   <li v-for="item in artists" :key="item.id" @click="getsongs(item.id)">

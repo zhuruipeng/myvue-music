@@ -8,7 +8,7 @@ import Songsdetail from '@/components/recommend/songsdetail'
 import Playsong from '@/components/recommend/playsong'
 import Playsong1 from '@/components/recommend/playsongs1'
 import Singersongs from '@/components/singer/singersongs'
-
+import Search from '@/components/Search/Search'
 
 
 Vue.use(Router)
@@ -54,6 +54,14 @@ export default new Router({
       name:'singersongs',
       component:Singersongs
     },
+    {path:'/search',
+      name:'Search',
+      component: Search
+    },
+    {path:'/search/:id',
+      // name:'playsong',
+      component: Playsong
+    }
   ]
 })
 

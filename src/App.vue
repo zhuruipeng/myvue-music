@@ -1,11 +1,6 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <!--这个插槽也可以用模块代替-->
-    <!--<div slot="back">-->
-    <!--<i  class="iconfont homeiconfont" @click="back">&#xe78a;</i>-->
-  <!--</div>-->
-    <!--底部bar栏目-->
 <foot></foot>
   </div>
 </template>

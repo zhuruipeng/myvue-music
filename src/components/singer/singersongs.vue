@@ -1,5 +1,9 @@
 <template>
-   <common :songslist="songslist" :artisinfo="artist"></common>
+  <div>
+    <back></back>
+    <common :songslist="songslist" :artisinfo="artist"></common>
+  </div>
+
 </template>
 
 <script>

@@ -5,9 +5,7 @@
   <div>
     <img :src="songsurl" alt="">
   </div>
-  <aplayer autoplay
-           showLrc
-           listMaxHeight
+  <aplayer :autoplay="true"
            v-for ='item in songs' :key="item.id"
            :music="{
     title: songsname,
@@ -16,6 +14,8 @@
     lrc:lyrics,
     pic: songsurl,
   }"
+           showLrc
+           listMaxHeight
   />
   <h2>这个地方加评论内容合适</h2>
 </div>
@@ -25,6 +25,7 @@
     methods: {
     },
     components:{
+
     },
     name: "playsong",
     data() {
@@ -34,7 +35,6 @@
         showLrc:true,
         mini :true,
         listMaxHeight:'',
-        autoplay:true,
         songsdetail:[],
         songsname:'',
         songsurl:'',
@@ -47,6 +47,7 @@
     props:[
 
      ],
+    methods: {},
     created() {
       //获取歌单
       let id = this.$route.params.id
