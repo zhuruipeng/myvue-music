@@ -27,6 +27,7 @@
   </div>
 </template>
 <script>
+  import {getdata} from '@/api/getdata'
   export default {
     name: "recommend",
     data(){
@@ -34,6 +35,19 @@
         songsdetail:{},
         tracks:[],
       }
+    },
+    created(){
+      let id = this.$route.params.id
+      getdata(`/playlist/detail?id=${id}`)
+        .then(res => {
+          this.songsdetail=res.data.playlist
+          // console.log(res.data);
+          this.tracks=(res.data.playlist.tracks)
+        })
+        .catch(err => {
+          console.log('获取歌曲失败了');
+        });
+
     },
     methods:{
       getsong(id){
@@ -45,18 +59,6 @@
         })
       }
     },
-
-    created(){
-      let id =(this.$route.params.id);
-      this.$axios.get('playlist/detail?id='+id)
-        .then(res => {
-          this.songsdetail=res.data.playlist
-          this.tracks=(res.data.playlist.tracks)
-        })
-        .catch(err => {
-          console.log('获取歌曲失败了');
-        });
-    }
   }
 </script>
 
@@ -70,10 +72,10 @@
     z-index: 999;
   }
   .commonstyle{
-background-color: darkgray;
+background-color:lightgrey;
   }
   .topcover{
-    height: 260px;
+    /*height: 260px;*/
   }
   .topcovername{
     position: absolute;
@@ -95,7 +97,8 @@ background-color: darkgray;
     border: 0;
     font-size: 100%;
     font-weight: 400;
-    vertical-align: baseline;  }
+    vertical-align: baseline;
+  }
   li{
     display: flex;
     flex-wrap: wrap;
@@ -104,6 +107,7 @@ background-color: darkgray;
     margin: 0 5px;
     border-bottom: 1px solid #e4e4e4;
     font-size: 13px;
+    height: 20px;
   }
   .autor{
     font-size: 10px;
@@ -119,12 +123,11 @@ background-color: darkgray;
   }
   .authorimg{
     position: absolute;
-    top: 30px;
+    top: 0px;
     left: 0px;
     width: 100%;
     height: 100%;
-    max-width:100px ;
-    max-height:100px;
+    max-height:300px;
   }
 
 </style>

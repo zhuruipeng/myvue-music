@@ -9,6 +9,8 @@ import Playsong from '@/components/recommend/playsong'
 import Playsong1 from '@/components/recommend/playsongs1'
 import Singersongs from '@/components/singer/singersongs'
 import Search from '@/components/Search/Search'
+import rankdetail from '@/components/Rank/rankdetail'
+
 
 
 Vue.use(Router)
@@ -61,6 +63,10 @@ export default new Router({
     {path:'/search/:id',
       // name:'playsong',
       component: Playsong
+    }
+    ,
+    {path:'/rank/:id',
+      component: rankdetail
     }
   ]
 })

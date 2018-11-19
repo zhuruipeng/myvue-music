@@ -10,10 +10,10 @@
          {{artisinfo.name}}
         </h2>
       </div>
-
       <div  class="bottomsonglsit">
-        <h4>播放全部</h4>
+
         <ul>
+          <h4>播放全部</h4>
           <li @click="songsdetail(item.id)" v-for="(item,index) in songslist" :key="item.id"><span class="numsort">{{index+1}}{{'  '}}</span>{{item.name}}
            <span class="autorname">{{item.ar[0].name}}</span>
           </li>
@@ -63,7 +63,7 @@
 <style scoped>
   h3 {
     position: relative;
-    top: -10px;
+    top: 5px;
     left: 47px;
     color: #fff;
     font-size: 18px;
@@ -120,6 +120,10 @@
     height: 100%;
     max-width:500px ;
     max-height:320px;
+  }
+  h4{
+   /*height: 10px;*/
+    /*text-align: left;*/
   }
 
 </style>

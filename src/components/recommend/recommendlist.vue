@@ -8,7 +8,8 @@
   </ul>
 </template>
 <script>
-    export default {
+
+  export default {
         name: "recommendlist",
       data(){
         return{
@@ -16,17 +17,18 @@
         }
       },
       created(){
-        //获取推荐歌单
+        //获取推荐歌单次页面
         let id = 1
         this.$axios.get('related/playlist?id='+id)
           .then(res=>{
             this.playlists=(res.data.playlists);
           })
           .catch(err=>{
-            console.log('err');
+            console.log('点击推荐歌单获取5个的地方失败了');
           })
 
-      }
+      },
+
 
     }
 </script>
