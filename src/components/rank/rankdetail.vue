@@ -1,11 +1,18 @@
 <template>
 
-  <div>
+  <div >
     <back></back>
-  <tab></tab>
+  <!--<tab></tab>-->
 
-<ul  v-for="item in tracks">
-  <li v-for = 'i in item.tracks '>{{i.first}}---{{i.second}}</li></ul>
+<ul >
+  <li v-for="item in tracks" :key="tracks.id">
+    <ul>
+  <!--//暂时没找到歌曲的id-->
+  <li v-for = 'i in item.tracks ' :key="tracks.id">{{i.first}}---{{i.second}}
+  </li>
+    </ul>
+  </li>
+</ul>
   </div>
 </template>
 <script>
@@ -18,7 +25,7 @@
       this.$axios.get('/toplist/detail')
         .then(res => {
           this.tracks=(res.data.list)
-          console.log(res.data.list);
+          console.log(this.tracks);
         })
     }
 

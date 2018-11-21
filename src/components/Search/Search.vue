@@ -7,7 +7,7 @@
       </div>
     </div>
     <ul v-for='item in songs' :key="item.id">
-      <router-link :to="{path:`/search/${item.id}`,params:{id:item.id}}">
+      <router-link :to="{path:`/search/${item.id}`,}">
         <li>{{item.name}}</li>
       </router-link>
 

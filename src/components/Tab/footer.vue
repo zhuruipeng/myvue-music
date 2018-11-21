@@ -40,7 +40,7 @@
     },
     watch:{
       selected: function (newv,oldv) {
-        console.log(newv,oldv)
+        // console.log(newv,oldv)
       }
     }
   }

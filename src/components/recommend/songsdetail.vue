@@ -13,7 +13,6 @@
           {{songsdetail.name}}
         </h4>
       </div>
-
       <div  class="bottomsonglsit">
         <h5>播放全部</h5>
         <ul>
@@ -49,16 +48,17 @@
         });
 
     },
-    methods:{
-      getsong(id){
+    methods: {
+      getsong (id) {
         this.$router.push({
-          name:'playsong',
+          name: 'playsong',
           params: {
             id: id
           }
         })
       }
     },
+
   }
 </script>
 

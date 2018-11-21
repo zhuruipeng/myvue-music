@@ -6,7 +6,7 @@ import Recommend from '@/components/recommend/recommend'
 import Recommendlist from '@/components/recommend/recommendlist'
 import Songsdetail from '@/components/recommend/songsdetail'
 import Playsong from '@/components/recommend/playsong'
-import Playsong1 from '@/components/recommend/playsongs1'
+// import Playsong1 from '@/components/recommend/playsongs1'
 import Singersongs from '@/components/singer/singersongs'
 import Search from '@/components/Search/Search'
 import rankdetail from '@/components/Rank/rankdetail'
@@ -14,6 +14,7 @@ import rankdetail from '@/components/Rank/rankdetail'
 
 
 Vue.use(Router)
+
 export default new Router({
   // mode: 'history',
   routes: [
@@ -46,11 +47,11 @@ export default new Router({
       name: 'playsong',
       component: Playsong,
     },
-    {
-      path: '/playsong1/:id',
-      name: 'playsong1',
-      component: Playsong1,
-    },
+    // {
+    //   path: '/playsong1/:id',
+    //   name: 'playsong1',
+    //   component: Playsong1,
+    // },
     {
       path:'/singer/singersongs/:id',
       name:'singersongs',
@@ -63,10 +64,17 @@ export default new Router({
     {path:'/search/:id',
       // name:'playsong',
       component: Playsong
+    },
+    {path:'/singersongs/:id',
+      component: Playsong
     }
     ,
     {path:'/rank/:id',
       component: rankdetail
+    },
+    {
+      path:'/rank/playsong/:id',
+      component:Playsong
     }
   ]
 })

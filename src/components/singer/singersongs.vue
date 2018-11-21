@@ -8,6 +8,7 @@
 
 <script>
   import Commontopbar from '@/components/Tab/commontopbar'
+
     export default {
         name: "singersongs",
       data(){
@@ -30,7 +31,8 @@
           }).catch(err => {
           console.log('获取歌手歌单失败了呢');
         })
-      }
+      },
+      methods:{}
 
     }
 </script>

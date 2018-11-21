@@ -50,11 +50,6 @@
     color: #fff;
   }
 
-  .router-link-active {
-    color: #fff;
-    font-weight: 700;
-  }
-
   .retopbanner {
     /*width:25rem;*/
   }
@@ -88,5 +83,11 @@
     right: 8px;
     color: #fff;
     font-size: 20px;
+  }
+  /*vue默认选中的类*/
+  .router-link-active{
+    color:#ffffff;
+    font-weight: 700;
+    border-bottom: 2px solid #fff;
   }
 </style>

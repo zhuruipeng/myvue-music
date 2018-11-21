@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view></router-view>
-<foot></foot>
+<!--<foot></foot>-->
   </div>
 </template>
 <script>
@@ -16,7 +16,8 @@
     },
   components: {
     recommend:Recommend,
-    foot:Footer
+    foot:Footer,
+
   },
     methods: {
       back() {
@@ -44,10 +45,10 @@ body{
 .homeiconfont{
   position: absolute;
   font-size: 25px;
-  /*padding-left: 15px;*/
   top: 8px;
   left: 15px;
   z-index: 999;
   color: #fff;
 }
+
 </style>

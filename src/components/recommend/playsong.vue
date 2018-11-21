@@ -17,7 +17,12 @@
            showLrc
            listMaxHeight
   />
-  <h2>这个地方加评论内容合适</h2>
+<ul>
+  播放过的歌曲
+<li >
+{{$store.getters.getId}}
+</li>
+</ul>
 </div>
 </template>
 <script>
