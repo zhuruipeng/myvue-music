@@ -47,4 +47,4 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # myvue-music
 
 
-### 前端新手，12月底想找一份前端工作,想看简历的朋友发邮件 1966308@qq.com
+### 前端新手，12月底想找一份前端工作,想看简历的朋友发邮件 19663083@qq.com
