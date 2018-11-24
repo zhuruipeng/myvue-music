@@ -12,7 +12,7 @@
       <div  class="bottomsonglsit">
 
         <ul>
-          <h4>播放全部11</h4>
+          <h4>播放全部</h4>
           <li @click="songsdetail(item.id)" v-for="(item,index) in songslist" :key="item.id"><span class="numsort">{{index+1}}{{'  '}}</span>{{item.name}}
            <span class="autorname">{{item.ar[0].name}}</span>
           </li>

@@ -5,7 +5,7 @@
   <div>
     <img :src="songsurl" alt="">
   </div>
-  <aplayer :autoplay="true"
+  <aplayer autoplay  listMaxHeight
            v-for ='item in songs' :key="item.id"
            :music="{
     title: songsname,
@@ -13,15 +13,16 @@
     src:item.url,
     lrc:lyrics,
     pic: songsurl,
+
   }"
            showLrc
-           listMaxHeight
+           mutex
   />
 <ul>
-  播放过的歌曲
-<li >
-{{$store.getters.getId}}
-</li>
+  <!--播放过的歌曲-->
+<!--<li >-->
+<!--{{$store.getters.getId}}-->
+<!--</li>-->
 </ul>
 </div>
 </template>
@@ -39,11 +40,13 @@
         lyrics: '',
         showLrc:true,
         mini :true,
-        listMaxHeight:'',
+        listMaxHeight:'500px',
         songsdetail:[],
         songsname:'',
         songsurl:'',
-        autorname:''
+        autorname:'',
+
+
       }
     },
     computed:{

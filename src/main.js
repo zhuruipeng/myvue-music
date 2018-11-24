@@ -10,6 +10,7 @@ import Vuex from 'vuex'
 Vue.config.productionTip = false
 //引入播放组件
 import APlayer from 'vue-aplayer';
+// VueAPlayer.disableVersionBadge = true
 //引入mint-ul组件
 //懒加载
 import VueLazyload from 'vue-lazyload'
